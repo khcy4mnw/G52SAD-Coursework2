@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
@@ -9,81 +7,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" blendMode="DARKEN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="216.0" prefWidth="246.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ImageViewDemoController">
   <children>
-      <Button layoutX="37.0" layoutY="82.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="25.0" prefWidth="26.0" text="&gt;" textFill="#252121">
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="2.0">
-               <light>
-                  <Light.Distant color="#1a58ff" />
-               </light>
-            </Lighting>
-         </effect></Button>
-      <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#previousButton" prefHeight="25.0" prefWidth="26.0" text="&lt;">
-         <effect>
-            <Lighting diffuseConstant="2.0">
-               <bumpInput>
-                  <BoxBlur />
-               </bumpInput>
-               <light>
-                  <Light.Distant color="#004eff" />
-               </light>
-            </Lighting>
-         </effect></Button>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="383.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open file" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Folder">
-             <items>
-             <MenuItem mnemonicParsing="false" onAction="#openFolder" text="Open folder" />
-             </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="About">
-          </Menu>
-        </menus>
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="1.86" specularConstant="0.32" specularExponent="20.93">
-               <light>
-                  <Light.Distant color="#7ae9ffeb" />
-               </light>
-            </Lighting>
-         </effect>
-      </MenuBar>
-      <Button layoutX="12.0" layoutY="152.0" mnemonicParsing="false" onAction="#rotateButton" text="Rotate">
-         <effect>
-            <Reflection bottomOpacity="0.29" fraction="0.65" topOpacity="0.44" />
-         </effect></Button>
-      <ImageView fx:id="myImageView" fitHeight="260.0" fitWidth="260.0" layoutX="81.0" layoutY="34.0" pickOnBounds="true" smooth="false" />
-      <Button layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#zoomIn" prefHeight="25.0" prefWidth="26.0" text="+">
-         <effect>
-            <Lighting diffuseConstant="2.0">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="205.12" color="#05f57c" elevation="120.35" />
-               </light>
-            </Lighting>
-         </effect></Button>
-      <Label layoutX="14.0" layoutY="218.0" text="ZOOM" />
-      <Button layoutX="37.0" layoutY="235.0" mnemonicParsing="false" onAction="#zoomOut" prefHeight="25.0" prefWidth="26.0" text="-">
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="1.84">
-               <light>
-                  <Light.Distant azimuth="237.56" color="#0dff74" elevation="137.09" />
-               </light>
-            </Lighting>
-         </effect></Button>
-      <Label layoutX="15.0" layoutY="65.0" prefHeight="17.0" prefWidth="51.0" text="PAGES" />
+    <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="200.0" layoutX="24.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@Dog.jpg" />
+      </image>
+    </ImageView>
+    <RadioButton fx:id="dogRadioButton" layoutX="73.0" layoutY="184.0" mnemonicParsing="false" onAction="#dogRadioButtonListener" selected="true" text="Dog">
+      <toggleGroup>
+        <ToggleGroup fx:id="myToggleGroup" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="catRadioButton" layoutX="131.0" layoutY="184.0" mnemonicParsing="false" onAction="#catRadioButtonListener" text="Cat" toggleGroup="$myToggleGroup" />
   </children>
-   <cursor>
-      <Cursor fx:constant="DEFAULT" />
-   </cursor>
-   <effect>
-      <ColorAdjust />
-   </effect>
 </AnchorPane>
